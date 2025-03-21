@@ -1,0 +1,16 @@
+BIO DATA
+
+NAME: Nithish kumar. D
+DOB:10/09/2005
+GENDER:Male
+NATIONALITY: Indian
+LANGUAGE KNOW: Tamil,English
+DEGREE: BCA
+QUALIFICATIONS: Higher Secondary
+HOBBIES:  Watching movies
+		Playing video games
+		Cricket lover
+		And a partime devoloper
+ADDRESS:1/55 Mariyamman kovil street, Padunelli
+Kanchipura 631502
+CONTACT: nkashyt56@gmail.com

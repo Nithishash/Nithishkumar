@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Dial Pad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f7f7f7;
+        }
+        .dialpad {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .dialpad input {
+            width: 100%;
+            padding: 10px;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .buttons button {
+            padding: 20px;
+            font-size: 24px;
+            border: none;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .buttons button:hover {
+            background-color: #ddd;
+        }
+        .buttons button:active {
+            background-color: #ccc;
+        }
+        .call-btn {
+            background-color: #28a745;
+            color: white;
+            grid-column: span 3;
+            font-size: 20px;
+        }
+        .clear-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dialpad">
+        <input type="text" id="phoneNumber" placeholder="Enter number" disabled>
+        <div class="buttons">
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button onclick="appendNumber('*')">*</button>
+            <button onclick="appendNumber('0')">0</button>
+            <button onclick="appendNumber('#')">#</button>
+            <button class="clear-btn" onclick="clearPhoneNumber()">Clear</button>
+            <button class="call-btn" onclick="makeCall()">Call</button>
+        </div>
+    </div>
+
+    <script>
+        function appendNumber(number) {
+            const phoneNumberField = document.getElementById('phoneNumber');
+            phoneNumberField.value += number;
+        }
+
+        function clearPhoneNumber() {
+            const phoneNumberField = document.getElementById('phoneNumber');
+            phoneNumberField.value = '';
+        }
+
+        function makeCall() {
+            const phoneNumberField = document.getElementById('phoneNumber');
+            const phoneNumber = phoneNumberField.value;
+            if (phoneNumber) {
+                alert(`Calling ${phoneNumber}...`);
+            } else {
+                alert('Please enter a phone number.');
+            }
+        }
+    </script>
+
+</body>
+</html>
